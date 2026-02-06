@@ -1,160 +1,186 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>For Raquel 💛</title>
 
 <style>
 body{
-background:#0b0b12;
-color:white;
-font-family:Arial;
-margin:0;
-padding:20px;
+  background:#0b0b12;
+  color:white;
+  font-family:Arial, sans-serif;
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:18px;
+  overflow-x:hidden;
 }
 
 .box{
-background:#1b1b2a;
-padding:25px;
-border-radius:15px;
-max-width:900px;
-margin:auto;
+  background:#1b1b2a;
+  padding:22px;
+  border-radius:16px;
+  width:min(900px,95vw);
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 20px 60px rgba(0,0,0,.45);
+  position:relative;
+  z-index:2;
 }
 
 input{
-width:100%;
-padding:10px;
-margin-top:10px;
-border-radius:6px;
-border:none;
+  width:100%;
+  padding:12px;
+  margin-top:10px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(0,0,0,.25);
+  color:white;
+  font-size:16px;
 }
 
 button{
-margin-top:10px;
-padding:10px;
-width:100%;
-background:pink;
-border:none;
-font-weight:bold;
-cursor:pointer;
+  margin-top:12px;
+  padding:12px;
+  width:100%;
+  background:pink;
+  border:none;
+  border-radius:10px;
+  font-weight:bold;
+  cursor:pointer;
+  font-size:16px;
 }
 
 .hidden{display:none;}
-.error{color:red;margin-top:10px;}
+.error{color:#ff8080;margin-top:10px;display:none;}
 
 .gallery{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:12px;
-margin-top:15px;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  margin-top:14px;
 }
 
 .gallery img{
-width:100%;
-height:220px;
-object-fit:cover;
-border-radius:15px;
-border:1px solid rgba(255,255,255,.2);
+  width:100%;
+  height:260px;
+  object-fit:contain;   /* NO CROPPING */
+  background:#000;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.18);
+}
+
+@media(max-width:560px){
+  .gallery{grid-template-columns:1fr;}
+  .gallery img{height:320px;}
 }
 
 /* Floating hearts */
-
 .heart{
-position:fixed;
-bottom:-20px;
-pointer-events:none;
-animation:floatUp linear forwards;
-opacity:.8;
+  position:fixed;
+  bottom:-20px;
+  pointer-events:none;
+  animation:floatUp linear forwards;
+  opacity:.8;
+  z-index:1;
 }
 
 @keyframes floatUp{
-from{transform:translateY(0) scale(1);opacity:1;}
-to{transform:translateY(-110vh) scale(1.6);opacity:0;}
+  from{transform:translateY(0) scale(1);opacity:1;}
+  to{transform:translateY(-110vh) scale(1.6);opacity:0;}
 }
 </style>
 </head>
 
 <body>
 
+<!-- LOGIN -->
 <div class="box" id="login">
-
-<h2>Enter Secret Password 💛</h2>
-
-<input id="pass" placeholder="Password">
-
-<button onclick="unlock()">Unlock</button>
-
-<div class="error hidden" id="err">Wrong password</div>
-
+  <h2>Enter Our Secret 💛</h2>
+  <input id="pass" placeholder="Secret word">
+  <button onclick="unlock()">Unlock</button>
+  <div class="error" id="err">Wrong secret</div>
 </div>
 
+<!-- MESSAGE -->
 <div class="box hidden" id="message">
 
-<h2>Ricky ❤️</h2>
-<h3>Us 🥰</h3>
+<h2>For Raquel ❤️</h2>
 
-<p style="white-space:pre-wrap;line-height:1.6">
+<p style="white-space:pre-wrap;line-height:1.65">
 
-Well if your reading this, omgg I can't believe you are actually reading it now, I wish I was there with u when your reading this.
+Well if your reading this, omgg I can't believe you are actually reading it now, I wish I was there with u when your reading this. I need to tell you this message isn't written by ai it's written by me, and also read it privately alone okay pleasee.
 
-This message isn't written by AI — it's from me.
+Okay let me start, I still remember I was scared how I am gonna take care of hadrian and still love u, when we were dating initially , I had a lot of doubts. But slowly I started to learn and became close to him too , ukw I will try to be his best friend instead of being his mom bf in the future too.
 
-I still remember being scared how I would take care of Hadrian and still love you. Slowly I learned and became close to him too.
+But the more I got to know about u, like how much struggles u had gone through and still u gave your best to make other happy that quality really made me feel good, because even I'm like that and you were so honest and pure.
 
-The more I knew you, the more I admired your strength and purity.
+Yes we might have a few difference here and there but still ik we can overcome that and love happily.
 
-When I got laid off, you still stayed with me. That meant everything.
+When I got laid off , I honestly thought ukw it's over, she's single mom why would she want to date a jobless guy atleast for the time being but u still continued to date me and trusted me and backed me.
 
-Gym day, Philippines food day — that’s when I knew.
+That made me feel so confident and felt , ukw even I have someone to back me even when the worse of the worse things are happening towards me.
 
-I felt safe, happy, loved.
+We went on multiple dates but the day I started to get feeling on you was during that date u and me went to the gym and ate Phillipines food and chilled together alone as one , I got a different feeling,  I don't know how to explain. I felt safe, happy, loved and felt fun.
 
-My gut told me: Ricky, this is your woman.
+Idk my gut was telling me ukw this is it.
 
-No matter what happens — job, distance, life — I promise to stand by you.
+Ik we had a lot of issues from different people in the past who tried to manipulate me from not dating u ,I don't wanna pull up their names u know them already but still my gut told me , ukw ricky raquel is your women, please never let go off her and stay with her.
 
-I love you now and forever.
+Ik the journey will be hard with hadrian, but I think I can make it happen and keep both of u happy.
 
-Honey (you) and bee (me).
+Well idk when your reading this I have a job or no, but I'm trying to get my dream job so please be a little patient with me if I don't have one too, ik I have the skills to get a great job and continue to back me now, I will back u until eternity haha.
 
-Love,
-Ricky ❤️
+About me going back to my country, honestly I don't know what's gonna happen on that but we can manage it.
+
+I love you now, and forever until eternity.
+
+Finally I can call Raquel as my babe, bae, boo and my everything.
+
+Praise the lord and always remember i love you no matter what happens to us and we will stick together as honey(u)and bee(me).
+
+— Ricky ❤️
 </p>
 
+<h3>Us 🥰</h3>
+
 <div class="gallery">
-<img src="Screenshot_20260205_224339_Gallery.jpg">
-<img src="Screenshot_20260205_224346_Gallery.jpg">
-<img src="Screenshot_20260205_224352_Gallery.jpg">
-<img src="Screenshot_20260205_224355_Gallery.jpg">
+  <img src="Screenshot_20260205_224339_Gallery.jpg">
+  <img src="Screenshot_20260205_224346_Gallery.jpg">
+  <img src="Screenshot_20260205_224352_Gallery.jpg">
+  <img src="Screenshot_20260205_224355_Gallery.jpg">
 </div>
 
 </div>
 
 <script>
-const PASSWORD="IloveURicky";
+// SECRET PHRASE
+const PASSWORD = "RickyandRaquel";
 
 function unlock(){
-let p=document.getElementById("pass").value;
-if(p===PASSWORD){
-document.getElementById("login").classList.add("hidden");
-document.getElementById("message").classList.remove("hidden");
-}else{
-document.getElementById("err").classList.remove("hidden");
-}
+  const p=document.getElementById("pass").value.trim();
+  if(p===PASSWORD){
+    document.getElementById("login").classList.add("hidden");
+    document.getElementById("message").classList.remove("hidden");
+    document.getElementById("err").style.display="none";
+  }else{
+    document.getElementById("err").style.display="block";
+  }
 }
 
-// floating hearts
+// Hearts
 function createHeart(){
-const heart=document.createElement("div");
-heart.className="heart";
-heart.innerHTML=["❤️","💖","💕","💘","💞"][Math.floor(Math.random()*5)];
-heart.style.left=Math.random()*100+"vw";
-heart.style.animationDuration=(4+Math.random()*3)+"s";
-heart.style.fontSize=(16+Math.random()*20)+"px";
-document.body.appendChild(heart);
-setTimeout(()=>heart.remove(),7000);
+  const heart=document.createElement("div");
+  heart.className="heart";
+  heart.innerHTML=["❤️","💖","💕","💘","💞"][Math.floor(Math.random()*5)];
+  heart.style.left=Math.random()*100+"vw";
+  heart.style.animationDuration=(4+Math.random()*3)+"s";
+  heart.style.fontSize=(16+Math.random()*20)+"px";
+  document.body.appendChild(heart);
+  setTimeout(()=>heart.remove(),7000);
 }
-
 setInterval(createHeart,500);
 </script>
 
