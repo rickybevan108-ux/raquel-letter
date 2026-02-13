@@ -1,3 +1,6 @@
+Here’s the full updated HTML with the “Happy Valentine’s Day” text and sparkles around her picture included:
+
+xml
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -110,6 +113,16 @@
       z-index: 3;
     }
 
+    .valentine-title {
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      margin-bottom: 0.4rem;
+      color: #ffd6f6;
+      opacity: 0;
+      animation: valGlow 3s ease-in-out forwards;
+    }
+
     .small-text {
       letter-spacing: 0.15em;
       text-transform: uppercase;
@@ -135,18 +148,56 @@
       opacity: 0.9;
     }
 
-    /* Her picture */
-    .crush {
+    @keyframes valGlow {
+      0%   { opacity: 0; text-shadow: 0 0 0 rgba(255, 183, 213, 0.0); }
+      50%  { opacity: 1; text-shadow: 0 0 14px rgba(255, 183, 213, 0.9); }
+      100% { opacity: 1; text-shadow: 0 0 6px rgba(255, 183, 213, 0.6); }
+    }
+
+    /* Her picture wrapper + sparkles */
+    .crush-wrapper {
       position: absolute;
       bottom: 0;
       right: 6%;
       height: 80vh;
       max-height: 620px;
-      object-fit: contain;
+      display: flex;
+      align-items: flex-end;
       z-index: 2;
+    }
+
+    .crush {
+      height: 100%;
+      object-fit: contain;
       filter:
         drop-shadow(0 18px 40px rgba(0,0,0,0.7))
         drop-shadow(0 0 18px rgba(255, 182, 193, 0.4));
+    }
+
+    .sparkle {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: radial-gradient(circle, #ffffff, #ffd6f6, #ff8cc9);
+      border-radius: 50%;
+      box-shadow:
+        0 0 6px rgba(255, 200, 230, 0.9),
+        0 0 14px rgba(255, 160, 210, 0.8);
+      opacity: 0;
+      animation: sparkleFloat 4s ease-in-out infinite;
+    }
+
+    .sparkle-1 { top: 10%; left: 15%; animation-delay: 0s; }
+    .sparkle-2 { top: 25%; left: 5%;  animation-delay: 1s; }
+    .sparkle-3 { top: 35%; left: 35%; animation-delay: 2s; }
+    .sparkle-4 { top: 15%; left: 45%; animation-delay: 3s; }
+
+    @keyframes sparkleFloat {
+      0%   { transform: translateY(4px) scale(0.4); opacity: 0; }
+      20%  { opacity: 1; }
+      50%  { transform: translateY(-4px) scale(1); opacity: 1; }
+      80%  { opacity: 0; }
+      100% { transform: translateY(4px) scale(0.4); opacity: 0; }
     }
 
     /* Softer floating hearts */
@@ -206,11 +257,10 @@
         padding: 0 1.5rem;
         text-align: center;
       }
-      .crush {
+      .crush-wrapper {
         right: 50%;
         transform: translateX(50%);
         height: 55vh;
-        opacity: 0.95;
       }
       .overlay {
         background: rgba(60, 0, 40, 0.7);
@@ -247,6 +297,7 @@
       <div class="overlay"></div>
 
       <div class="content">
+        <p class="valentine-title">Happy Valentine’s Day</p>
         <p class="small-text">In a field of pink tulips...</p>
         <h1>For Raquel</h1>
         <p class="message">
@@ -257,8 +308,14 @@
         <p class="signature">Always, just for you. ❤</p>
       </div>
 
-      <!-- her cut-out picture -->
-      <img src="1000047460-removebg-preview.png" alt="Raquel" class="crush">
+      <!-- her cut-out picture with sparkles -->
+      <div class="crush-wrapper">
+        <img src="1000047460-removebg-preview.png" alt="Raquel" class="crush">
+        <div class="sparkle sparkle-1"></div>
+        <div class="sparkle sparkle-2"></div>
+        <div class="sparkle sparkle-3"></div>
+        <div class="sparkle sparkle-4"></div>
+      </div>
     </div>
   </div>
 
