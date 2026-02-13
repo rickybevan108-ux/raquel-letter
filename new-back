@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>For Raquel</title>
+
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=DM+Sans:wght@300;500&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; }
+
+    body {
+      font-family: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #fff;
+      overflow: hidden;
+      background: #000;
+    }
+
+    /* Password screen */
+    .password-screen {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at top, #34102f, #050008);
+      z-index: 10;
+    }
+
+    .password-card {
+      padding: 2rem 2.5rem;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.8);
+      max-width: 340px;
+      width: 90%;
+    }
+
+    .password-card h2 { margin-bottom: 0.5rem; }
+
+    .password-card p {
+      font-size: 0.9rem;
+      opacity: 0.85;
+      margin-bottom: 1.2rem;
+    }
+
+    .password-card input {
+      padding: 0.55rem 0.7rem;
+      border-radius: 6px;
+      border: none;
+      outline: none;
+      width: 100%;
+      max-width: 220px;
+      text-align: center;
+    }
+
+    .password-card button {
+      margin-top: 1rem;
+      padding: 0.5rem 1.4rem;
+      border: none;
+      border-radius: 999px;
+      background: #ff6fa8;
+      color: #fff;
+      cursor: pointer;
+      font-weight: 500;
+      box-shadow: 0 10px 25px rgba(255, 111, 168, 0.6);
+    }
+
+    .password-card button:hover { background: #ff4f95; }
+
+    /* Secret content (hidden first) */
+    .secret-content {
+      display: none;
+      height: 100vh;
+      width: 100%;
+    }
+
+    .hero {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      background-image: url("tulips.jpg"); /* heavenly tulip field */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding-left: 8%;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top, rgba(255, 210, 240, 0.45), rgba(120, 30, 80, 0.7));
+    }
+
+    .content {
+      position: relative;
+      max-width: 520px;
+      z-index: 3;
+    }
+
+    .small-text {
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+      opacity: 0.9;
+    }
+
+    h1 {
+      font-family: "Parisienne", cursive;
+      font-size: 3rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .message {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 1.4rem;
+    }
+
+    .signature {
+      font-style: italic;
+      opacity: 0.9;
+    }
+
+    /* Her picture */
+    .crush {
+      position: absolute;
+      bottom: 0;
+      right: 6%;
+      height: 80vh;
+      max-height: 620px;
+      object-fit: contain;
+      z-index: 2;
+      filter: drop-shadow(0 18px 40px rgba(0,0,0,0.7));
+    }
+
+    /* Floating hearts */
+    .hearts {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .heart {
+      position: absolute;
+      bottom: -40px;
+      width: 18px;
+      height: 18px;
+      background: #ff6fa8;
+      transform: rotate(45deg);
+      animation: float 10s linear infinite;
+      opacity: 0.9;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      background: #ff6fa8;
+      border-radius: 50%;
+    }
+
+    .heart::before { top: -9px; left: 0; }
+    .heart::after { left: -9px; top: 0; }
+
+    .heart:nth-child(1) { left: 8%;  animation-duration: 11s; animation-delay: 0s; }
+    .heart:nth-child(2) { left: 25%; animation-duration: 13s; animation-delay: 2s; }
+    .heart:nth-child(3) { left: 45%; animation-duration: 10s; animation-delay: 4s; }
+    .heart:nth-child(4) { left: 65%; animation-duration: 12s; animation-delay: 1s; }
+    .heart:nth-child(5) { left: 82%; animation-duration: 14s; animation-delay: 3s; }
+    .heart:nth-child(6) { left: 92%; animation-duration: 16s; animation-delay: 5s; }
+
+    @keyframes float {
+      0%   { transform: translateY(0) rotate(45deg); opacity: 0; }
+      10%  { opacity: 1; }
+      100% { transform: translateY(-120vh) rotate(45deg); opacity: 0; }
+    }
+
+    @media (max-width: 800px) {
+      .hero {
+        justify-content: center;
+        padding: 0 1.5rem;
+        text-align: center;
+      }
+      .crush {
+        right: 50%;
+        transform: translateX(50%);
+        height: 55vh;
+        opacity: 0.95;
+      }
+      .overlay {
+        background: rgba(60, 0, 40, 0.7);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Password screen -->
+  <div class="password-screen" id="passwordScreen">
+    <div class="password-card">
+      <h2>This page is just for Raquel</h2>
+      <p>Enter the secret word to open it.</p>
+      <input id="pw" type="password" placeholder="Password" />
+      <button onclick="checkPassword()">Open</button>
+    </div>
+  </div>
+
+  <!-- Secret romantic content -->
+  <div class="secret-content" id="secretContent">
+    <div class="hearts">
+      <div class="heart"></div>
+      <div class="heart"></div>
+      <div class="heart"></div>
+      <div class="heart"></div>
+      <div class="heart"></div>
+      <div class="heart"></div>
+    </div>
+
+    <div class="hero">
+      <div class="overlay"></div>
+
+      <div class="content">
+        <p class="small-text">In a field of pink tulips...</p>
+        <h1>For Raquel</h1>
+        <p class="message">
+          If I could plant a flower for every time you made my day brighter,
+          this whole field would still not be enough.
+          Thank you for being the most beautiful part of my world.
+        </p>
+        <p class="signature">Always, just for you. ❤</p>
+      </div>
+
+      <!-- her cut-out picture -->
+      <img src="1000047460-removebg-preview.jpg" alt="Raquel" class="crush">
+    </div>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const input = document.getElementById("pw").value;
+      const realPassword = "raquel"; // password
+
+      if (input === realPassword) {
+        document.getElementById("passwordScreen").style.display = "none";
+        document.getElementById("secretContent").style.display = "block";
+      } else {
+        alert("Wrong password, try again.");
+      }
+    }
+  </script>
+</body>
+</html>
